@@ -1,0 +1,50 @@
+
+body {
+	background: url(../images/background.jpg);
+}
+img { 
+
+ 	height: 160px;
+    width: 245px;
+    margin: 15px;
+ }
+
+ img:hover {
+ 	height: 180px;
+ 	width: 270px;
+    margin: 15px;
+ }
+
+
+ h2 {
+ 	color: #f0ffff;
+ }
+
+/*
+ div {
+ 	background-color: #eee;
+ }*/
+
+
+ span {
+
+    width: 500px;
+ 	background-color: red;
+ 
+ }
+
+.gamestatus {
+
+	border-radius: 5%;
+	z-index: 999;
+	background-color: yellow;
+ 
+}
+
+.makevisible {
+	visibility: hidden;
+}
+
+.makered {
+	background-color: red;
+}
