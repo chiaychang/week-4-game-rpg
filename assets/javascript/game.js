@@ -1,5 +1,5 @@
 
-
+//set values for each character
 var game = {
 
 	charactersName: [ "Wonder Woman", "Harley Quinn", "Blackwidow", "Psylocke"],
@@ -22,6 +22,7 @@ var game = {
 
 }
 
+//set up variables
 var charactersArray = [];
 var enemiesArray = [];
 var attacker = [];
@@ -54,8 +55,7 @@ $(document).ready(function() {
 
    }
 
- $("img").append("<span>THIS IS THE SPAN</span>");
-
+//select the player/defender
 
       $(document).on("click", "img", function() {
 
@@ -75,8 +75,8 @@ if (characterpicked===false && charactersArray.length===4){
         characterpicked=== true;
        
   }     
-        // var newEnemy= function(){
-            $("#enemies img").on("click", function gamereset(){        
+   // select an enemy to attack
+            $("#enemies img").on("click", function(){        
                 $("#currentattacker").html($(this)); 
                 $(this).addClass("attacker");
                 $("#attackButton").toggleClass("makevisible");
@@ -84,13 +84,10 @@ if (characterpicked===false && charactersArray.length===4){
                 $("#AttackerName").toggleClass("makevisible");
                 $("#AttackerName").html("<h2>"+$(this).data("Name")+"</h2>");
               
-                // });
-        // }
-        //   var resetHP = function(){
              
-              console.log(PlayerHP);
-              console.log(AttackerHP);
-              
+     
+             
+     //set up the player HP and attacker HP         
               PlayerHP= $(".player").data("HP");
               AttackerHP= $(".attacker").data("HP");
               attackpower= $(".player").data("AP");
@@ -99,12 +96,14 @@ if (characterpicked===false && charactersArray.length===4){
               PlayerHP = parseInt(PlayerHP);
               AttackerHP = parseInt(AttackerHP);
               attackpower = parseInt(attackpower);
-              counterpower = parseInt(counterpower);         
-        // }
+              counterpower = parseInt(counterpower); 
 
-        // newEnemy();
-        // resetHP();
 
+              console.log(PlayerHP);
+              console.log(AttackerHP);        
+    
+
+//attack! 
          $("#attackButton").on("click", function(){
 
               attackpower+6;
@@ -124,7 +123,7 @@ if (characterpicked===false && charactersArray.length===4){
                  	$("#enemyHP").toggleClass("makered");
                  } 
 
-
+//winning scenario ----- need fixing!
            if (AttackerHP < 0){
                alert("You Won! Select a New Enemy to Attack.");
                $("#currentattacker").empty();
@@ -136,7 +135,7 @@ if (characterpicked===false && charactersArray.length===4){
                counterpower = parseInt(counterpower); 
    
            }
-   
+//losing scenario    
            else if(PlayerHP < 0) {
               var again = confirm("You Lost! Try Again?");
               if (again) {
