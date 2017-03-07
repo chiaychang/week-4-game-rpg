@@ -116,11 +116,11 @@ if (characterpicked===false && charactersArray.length===4){
               $("#enemyHP").html("<h3>"+$(".attacker").data("Name")+" HP: " +AttackerHP+ "</h3>");               
 
              
-           if(playerHP == 100){
+           if(playerHP < 100){
                  	$("#playerHP").toggleClass("makered");
                  }
 
-           if(AttackerHP == 100){
+           if(AttackerHP < 100){
                  	$("#enemyHP").toggleClass("makered");
                  } 
 
